@@ -12,6 +12,5 @@ class ImageViewer : AppCompatActivity() {
         setContentView(R.layout.activity_image_view)
         val storedImage = intent.getSerializableExtra("uri") as StoredImage
         img_view.setImageURI(Uri.parse(storedImage.uri))
-
     }
 }

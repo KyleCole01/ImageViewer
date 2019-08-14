@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
                 intent.type = "image/*"
                 startActivityForResult(intent, IMAGE_REQUEST_CODE)
             }
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -42,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
     private fun createTextView(imageText: String, listIndex: Int): TextView {
         val fullIntent = Intent(context,ImageViewer::class.java)
         val textView = TextView(applicationContext)
@@ -56,14 +53,7 @@ class MainActivity : AppCompatActivity() {
         textView.setOnClickListener{
                 val storedImage = StoredImage(imageText)
                 fullIntent.putExtra("uri",storedImage)
-//                fullIntent.putExtra("index", listIndex)
-//                fullIntent.putExtra("name", imageText)
                 startActivity(fullIntent)
-
         }
-
         return textView
     }}
-
-
-
